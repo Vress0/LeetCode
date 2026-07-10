@@ -4,8 +4,8 @@
     "editor.snippetSuggestions": "top",
     "code-runner.runInTerminal": true,
     "code-runner.executorMap": {
-      "c": "cd $dir && clang $fileName -o $fileNameWithoutExt.exe -Wall -g -Og -static-libgcc -fcolor-diagnostics --target=x86_64-w64-mingw -std=c11 && $dir$fileNameWithoutExt",
-      "cpp": "cd $dir && clang++ $fileName -o $fileNameWithoutExt.exe -Wall -g -Og -static-libgcc -fcolor-diagnostics --target=x86_64-w64-mingw -std=c++17 && $dir$fileNameWithoutExt"
+      "c": "cd \"$dir\" && out=\"${TMPDIR:-/tmp}/leetcode-run/$fileNameWithoutExt\" && mkdir -p \"$(dirname \"$out\")\" && trap 'rm -f \"$out\"' EXIT && clang \"$fileName\" -o \"$out\" -Wall -Og -fcolor-diagnostics -std=c11 && \"$out\"",
+      "cpp": "cd \"$dir\" && out=\"${TMPDIR:-/tmp}/leetcode-run/$fileNameWithoutExt\" && mkdir -p \"$(dirname \"$out\")\" && trap 'rm -f \"$out\"' EXIT && clang++ \"$fileName\" -o \"$out\" -Wall -Og -fcolor-diagnostics -std=c++17 && \"$out\""
     }, 
     "code-runner.saveFileBeforeRun": true, 
     "code-runner.preserveFocus": true, 
@@ -15,12 +15,10 @@
     "C_Cpp.errorSquiggles": "Disabled", 
     "C_Cpp.autocomplete": "Disabled",
     "clang.cflags": [
-      "--target=x86_64-w64-mingw",
       "-std=c11",
       "-Wall"
     ],
     "clang.cxxflags": [ 
-      "--target=x86_64-w64-mingw",
       "-std=c++17",
       "-Wall"
     ],

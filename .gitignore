@@ -1,0 +1,33 @@
+# macOS
+.DS_Store
+
+# C/C++ build products
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.dylib
+*.dll
+*.exe
+*.out
+*.app
+*.app/
+*.dSYM
+*.dSYM/
+
+# Local executable outputs named by problem number
+/Easy/[0-9]
+/Easy/[0-9][0-9]
+/Easy/[0-9][0-9][0-9]
+/Easy/[0-9][0-9][0-9][0-9]
+/Easy/[0-9][0-9][0-9][0-9][0-9]
+/Med/[0-9]
+/Med/[0-9][0-9]
+/Med/[0-9][0-9][0-9]
+/Med/[0-9][0-9][0-9][0-9]
+/Med/[0-9][0-9][0-9][0-9][0-9]
+
+# Editor temp files
+*.swp
+*.swo
